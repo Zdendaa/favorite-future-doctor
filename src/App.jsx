@@ -34,37 +34,40 @@ const sections = [
   { id: "miluju", label: "💌 Miluju tě" },
   { id: "obejmout", label: "🤗 Obejmout" },
   { id: "duvody", label: "⭐ Proč tě miluju" },
-  { id: "motivace", label: "🎓 Zvládneš to" },
+  { id: "motivace", label: "🎓 Věřím ti" },
 ];
 
 const doctorCompliments = [
-  "Budeš doktorka, na kterou budou pacienti vzpomínat s úsměvem.",
-  "Máš obrovské srdce a přesně to dělá skvělou doktorku.",
-  "Tvoje trpělivost je vzácná superschopnost.",
-  "Umíš uklidnit i jen tím, že jsi nablízku.",
+  "Jednou budeš doktorka, na kterou lidi nikdy nezapomenou.",
+  "Máš drive, co většina lidí ani nechápe.",
+  "To, že se učíš do noci, není normální… ale přesně to z tebe udělá nejlepší doktorku.",
+  "Jsi ten typ, co nejen že to vystuduje… ale ještě v tom bude nejlepší.",
+  "Jednou si pacienti řeknou, že měli štěstí, že narazili právě na tebe.",
+  "Máš skvělou kombinaci síly a jemnosti, přesně to, co z tebe udělá výjimečnou doktorku.",
 ];
 
 const rotatingLoveLines = [
-  "Moje chytrá holka se samými jedničkami, jsi neskutečná.",
-  "Mám rád tvůj smích.",
-  "Mám rád, jak se nikdy nevzdáváš.",
-  "Mám rád, jak krásně záříš.",
-  "Mám rád naše malé každodenní chvíle.",
-  "Jsem moc rád, že tě mám.",
+  "Miluju ten tvůj smích, i když se směješ zrovna mně 😅",
+  "Miluju, jak se nikdy nevzdáváš.",
+  "Miluju tvoje velký oříškový kukadla.",
+  "Miluju, jak si jdeš za svým, i když to znamená učit se do noci.",
+  "Miluju, jak se mnou sdílíš úplně všechno.",
+  "Miluju, že i když jsi unavená, stejně si na mě uděláš čas.",
+  "Občas si říkám, jaký mám štěstí, že tě mám.",
 ];
 
 const nicknames = [
   {
     title: "Česnek 🧄",
-    reason: "Protože miluješ česnek a tvoje jídla jsou díky tomu boží.",
+    reason: "Protože miluješ česnek a tvoje jídla jsou díky němu úplně boží.",
   },
   {
     title: "Oříšek 👀",
-    reason: "Protože máš nádherná velká oříšková kukadla.",
+    reason: "Protože máš nádherný velký oříškový kukadla.",
   },
   {
     title: "Kudlanka Kája 💚",
-    reason: "Protože je to tvoje originální přezdívka, co na tebe sedí.",
+    reason: "Protože jsi crazy a královna chaosu",
   },
   {
     title: "Láska 💖",
@@ -72,27 +75,27 @@ const nicknames = [
   },
   {
     title: "Zlato ✨",
-    reason: "Protože jsi pro mě poklad každý den.",
+    reason: "Protože jseš pro mě poklad každej den.",
   },
 ];
 
 const reasons = [
-  "Protože jsi laskavá i ve dnech, kdy je to těžké.",
-  "Protože se vedle tebe cítím doma.",
+  "Protože jseš laskavá i ve dnech, kdy je to těžký.",
+  "Protože vedle tebe se cejtím doma.",
   "Protože se mnou sdílíš radost i starosti.",
-  "Protože máš sílu, která mě inspiruje.",
-  "Protože jsi nádherná uvnitř i navenek.",
+  "Protože máš sílu, co mě inspiruje.",
+  "Protože jseš nádherná uvnitř i navenek.",
   "Protože jsi moje zlatíčko.",
   "Protože tě miluju celým srdcem.",
 ];
 
 const motivationSteps = [
-  "Od první třídy máš samé jedničky, to je tvoje super síla.",
+  "Od první třídy máš samý jedničky, to je tvoje super síla.",
   "Máš plán, disciplínu a silnou hlavu.",
-  "Každý den se posouváš o kus dál.",
-  "Maturitu dáš s přehledem.",
-  "Přijímačky na vysokou zvládneš.",
-  "Budeš přesně tam, kde máš být.",
+  "Každej den se posouváš o kus dál.",
+  "Maturitu dáš levou zadní.",
+  "Přijímačky zvládneš stejně jako všechno ostatní.",
+  "Budeš přesně tam, kde chceš být.",
 ];
 
 function App() {
@@ -109,10 +112,10 @@ function App() {
 
   const doctorSkills = useMemo(
     () => [
-      { name: "Empatie", value: 96 },
-      { name: "Odvaha", value: 91 },
-      { name: "Chytrá hlavička", value: 94 },
-      { name: "Něžnost", value: 98 },
+      { name: "Empatie", value: 91 },
+      { name: "Odvaha", value: 97 },
+      { name: "Chytrá hlavička", value: 99 },
+      { name: "Něžnost", value: 95 },
     ],
     [],
   );
@@ -219,11 +222,11 @@ function App() {
       </div>
 
       <header className="hero">
-        <p className="eyebrow">Jen pro moji oblíbenou holku ✨</p>
+        <p className="eyebrow">Jen pro moji nejoblíbenější holku ✨</p>
         <h1>Ahoj, zlatíčko</h1>
 
         <button className="main-love-btn" onClick={nextLoveLine}>
-          Jsi moje zlatíčko! 💞
+          Jseš moje zlatíčko! 💞
         </button>
 
         <div key={heartRain} className="heart-rain" aria-hidden="true">
@@ -241,7 +244,7 @@ function App() {
 
         <div className="nickname-card">
           <p className="nickname-title">
-            Dnešní přezdívka: {nicknames[nicknameIndex].title}
+            Dnešní přezdívka pro tebe: {nicknames[nicknameIndex].title}
           </p>
           <p className="nickname-reason">{nicknames[nicknameIndex].reason}</p>
           <button
@@ -251,7 +254,7 @@ function App() {
               nextNickname();
             }}
           >
-            Další přezdívka
+            Hoď další přezdívku
           </button>
         </div>
 
@@ -275,7 +278,7 @@ function App() {
           <div className="panel slide-up">
             <h2>Budeš skvělá doktorka 👩‍⚕️</h2>
             <p className="panel-text">
-              Klikni na doktorku a uvidíš další pochvalu.
+              Klikni na doktorku a vyskočí další pochvala.
             </p>
 
             <button
@@ -314,7 +317,7 @@ function App() {
         {activeSection === "miluju" && (
           <div className="panel slide-up">
             <h2>Miluju tě 💌</h2>
-            <p className="panel-text">Každé kliknutí pošle další vlnu lásky.</p>
+            <p className="panel-text">Každý klik pošle další vlnu lásky.</p>
 
             <p className="highlight-line">{rotatingLoveLines[loveIndex]}</p>
 
@@ -325,7 +328,7 @@ function App() {
                 nextLoveLine();
               }}
             >
-              Poslat další lásku
+              Poslat další dávku lásky
             </button>
 
             <div className="confetti-line" aria-hidden="true">
@@ -341,7 +344,9 @@ function App() {
         {activeSection === "obejmout" && (
           <div className="panel slide-up">
             <h2>Virtuální objetí 🤗</h2>
-            <p className="panel-text">Mačkej tlačítko a obejmutí zesílí.</p>
+            <p className="panel-text">
+              Mačkej tlačítko a objetí bude čím dál silnější.
+            </p>
 
             <div className="hug-meter">
               <div
@@ -364,7 +369,7 @@ function App() {
                 sendHug();
               }}
             >
-              Obejmi mě
+              Obejmi mě pořádně
             </button>
 
             <button className="ghost-btn" onClick={() => setHugPower(0)}>
@@ -376,7 +381,9 @@ function App() {
         {activeSection === "duvody" && (
           <div className="panel slide-up">
             <h2>7 důvodů, proč tě miluju ⭐</h2>
-            <p className="panel-text">Proklikej si všechny důvody.</p>
+            <p className="panel-text">
+              Proklikej si všechny důvody, proč jsi top.
+            </p>
 
             <p className="highlight-line">{reasons[reasonIndex]}</p>
 
@@ -387,7 +394,7 @@ function App() {
                 nextReason();
               }}
             >
-              Další důvod
+              Hoď další důvod
             </button>
 
             <div className="reason-dots" aria-hidden="true">
@@ -405,8 +412,8 @@ function App() {
           <div className="panel slide-up">
             <h2>Maturitu i přijímačky zvládneš 🎓</h2>
             <p className="panel-text">
-              Jsi extrémně chytrá a od první třídy máš samé jedničky. Klikni pro
-              další dávku motivace.
+              Jseš extrémně chytrá a od první třídy máš samý jedničky. Klikni
+              pro další dávku motivace.
             </p>
 
             <p className="highlight-line">{motivationSteps[motivationLevel]}</p>
@@ -418,7 +425,7 @@ function App() {
                 boostMotivation();
               }}
             >
-              Přidat motivaci
+              Přihodit motivaci
             </button>
 
             <ul className="motivation-list">
@@ -437,7 +444,7 @@ function App() {
       </section>
 
       <footer className="app-footer">
-        Uděláno s radostí pro moji oblíbenou holku 💫
+        Udělaný s radostí pro moji nejoblíbenější holku 💫
       </footer>
     </main>
   );
