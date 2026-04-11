@@ -222,7 +222,9 @@ function App() {
       </div>
 
       <header className="hero">
-        <p className="eyebrow">Jen pro moji nejoblíbenější holku ✨</p>
+        <p className="eyebrow">
+          Jen pro moji jedinou a nejmilovanější přítelkyni ✨
+        </p>
         <h1>Ahoj, zlatíčko</h1>
 
         <button className="main-love-btn" onClick={nextLoveLine}>
@@ -444,7 +446,7 @@ function App() {
       </section>
 
       <footer className="app-footer">
-        Udělaný s radostí pro moji nejoblíbenější holku 💫
+        S radostí vytvořené pro moji milovanou holku 💫
       </footer>
     </main>
   );
