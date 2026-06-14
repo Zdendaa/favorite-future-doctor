@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap");
+
+/* ── RESET / ROOT ─────────────────────────────────────────────────────────── */
+
+.anp-root {
+  min-height: 100vh;
+  background: #0d0a10;
+  color: #f0e8f0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────────────────── */
+
+.anp-hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+}
+
+.anp-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 50% 0%,
+      rgba(232, 98, 138, 0.18) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40% 40% at 20% 80%,
+      rgba(150, 60, 110, 0.12) 0%,
+      transparent 60%
+    );
+  pointer-events: none;
+}
+
+.anp-hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e8628a;
+  margin: 0 0 20px;
+}
+
+.anp-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 20px;
+}
+.anp-hero-title em {
+  font-style: italic;
+  color: #f0a0bc;
+}
+
+.anp-hero-sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(240, 232, 240, 0.55);
+  max-width: 420px;
+  margin: 0 auto 48px;
+}
+
+.anp-hero-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(232, 98, 138, 0.5), transparent);
+  margin: 0 auto;
+}
+
+/* ── CHAPTER ──────────────────────────────────────────────────────────────── */
+
+.anp-chapter {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.anp-chapter + .anp-chapter {
+  border-top: 1px solid rgba(232, 98, 138, 0.1);
+}
+
+.anp-chapter-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.anp-chapter-num {
+  font-family: "Playfair Display", serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #e8628a;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.anp-chapter-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+/* ── PHOTO GRID ───────────────────────────────────────────────────────────── */
+
+.anp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.anp-photo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.anp-photo-card--clickable {
+  cursor: zoom-in;
+}
+
+.anp-photo-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1020;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(232, 98, 138, 0.1);
+}
+
+.anp-photo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.anp-photo-card--clickable:hover .anp-photo-img-wrap img {
+  transform: scale(1.04);
+}
+
+.anp-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(240, 232, 240, 0.2);
+}
+.anp-photo-placeholder span {
+  font-size: 28px;
+  opacity: 0.4;
+}
+.anp-photo-placeholder small {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-family: "Inter", sans-serif;
+}
+
+.anp-photo-caption {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+  color: rgba(240, 232, 240, 0.45);
+  margin: 0;
+  padding: 0 4px;
+}
+
+/* ── PROMISE SECTION ──────────────────────────────────────────────────────── */
+
+.anp-promise {
+  text-align: center;
+  padding: 80px 24px 100px;
+  border-top: 1px solid rgba(232, 98, 138, 0.1);
+  position: relative;
+}
+
+.anp-promise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 70% at 50% 50%,
+    rgba(232, 98, 138, 0.07) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.anp-promise-ring {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 28px;
+  filter: drop-shadow(0 0 20px rgba(232, 98, 138, 0.45));
+  animation: prRingFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes prRingFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.anp-promise-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e8628a;
+  margin: 0 0 14px;
+}
+
+.anp-promise-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 24px;
+}
+.anp-promise-title em {
+  font-style: italic;
+  color: #f0a0bc;
+}
+
+.anp-promise-text {
+  max-width: 480px;
+  margin: 0 auto 24px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(240, 232, 240, 0.6);
+}
+
+.anp-promise-sign {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #f0a0bc;
+  margin: 0;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────────────────────── */
+
+.anp-footer {
+  text-align: center;
+  padding: 32px 24px 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.anp-footer p {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #f0a0bc;
+  margin: 0;
+}
+
+.anp-footer span {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(240, 232, 240, 0.25);
+}
+
+/* ── VIDEO THUMBNAIL ──────────────────────────────────────────────────────── */
+
+.anp-video-thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.anp-video-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.anp-photo-card--clickable:hover .anp-video-thumb video {
+  transform: scale(1.04);
+}
+
+.anp-video-play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  /* re-use flex on span via pseudo trick */
+  display: grid;
+  place-items: center;
+}
+
+.anp-photo-card--clickable:hover .anp-video-play-icon {
+  opacity: 1;
+}
+
+/* ── LIGHTBOX ─────────────────────────────────────────────────────────────── */
+
+.anp-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 2, 8, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+.anp-lightbox img {
+  max-width: min(90vw, 900px);
+  max-height: 75vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+}
+
+.anp-lightbox-video {
+  max-width: min(90vw, 900px);
+  max-height: 75vh;
+  border-radius: 10px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+  outline: none;
+}
+
+.anp-lightbox-caption {
+  margin-top: 16px;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(240, 232, 240, 0.5);
+  text-align: center;
+}
+
+.anp-lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+}
+.anp-lightbox-close:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .anp-hero {
+    padding: 72px 20px 56px;
+  }
+  .anp-chapter {
+    padding: 48px 20px;
+  }
+  .anp-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .anp-chapter-title {
+    font-size: 22px;
+  }
+}
