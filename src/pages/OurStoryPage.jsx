@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./OurStoryPage.css";
 
 import jezek from "/videos/jezek.mp4";
-import firstPhoto from "../assets/photos/firstPhoto.JPG";
+import firstPhoto from "../assets/photos/firstPhoto.jpg";
 import litomericeLeave from "../assets/photos/litomericeLeave.jpg";
 import cucflek from "../assets/photos/cucflek.jpg";
 
