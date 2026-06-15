@@ -1,10 +1,20 @@
 import { useState } from "react";
 import "./OurStoryPage.css";
 
+import prvniRandePetrin from "/videos/prvniRandePetrin.mp4";
 import jezek from "/videos/jezek.mp4";
+import ploskoviceSkok from "/videos/ploskoviceSkok.mp4";
+import triMesice from "/videos/triMesice.mp4";
 import firstPhoto from "../assets/photos/firstPhoto.jpg";
 import litomericeLeave from "../assets/photos/litomericeLeave.jpg";
 import cucflek from "../assets/photos/cucflek.jpg";
+import chata from "../assets/photos/chata.jpg";
+import nemeckoBoty from "../assets/photos/nemeckoBoty.jpg";
+import hradStrekov from "../assets/photos/hradStrekov.jpg";
+import prvniMaj from "../assets/photos/prvniMaj.jpg";
+import kajaMaturitak from "../assets/photos/kajaMaturitak.jpg";
+import oblibena from "../assets/photos/oblibena.jpg";
+import pulRoku from "../assets/photos/pulRoku.jpg";
 
 const CHAPTERS = [
   {
@@ -12,9 +22,15 @@ const CHAPTERS = [
     label: "Jak to začalo",
     photos: [
       {
+        src: prvniRandePetrin,
+        type: "video",
+        caption:
+          "První rande — Petřín, Praha. Oba nervózní a ještě jsme nevěděli, jak to dopadne.",
+      },
+      {
         src: jezek,
         type: "video",
-        caption: "Druhé rande — Stromovka, Praha. Zážite s ježkem",
+        caption: "Druhé rande — Stromovka, Praha. A ochočený ježek.",
       },
       {
         src: firstPhoto,
@@ -34,27 +50,76 @@ const CHAPTERS = [
   },
   {
     id: 2,
-    label: "Naše dobrodružství",
+    label: "Spolu na cestách",
     photos: [
-      { src: null, caption: "Někde na cestě — a bylo mi tam skvěle." },
-      { src: null, caption: "Chvíle, kdy se čas zastavil." },
-      { src: null, caption: "Smích, který si pamatuju dodnes." },
+      {
+        src: chata,
+        caption: "Poprvé na chatě. Jen ty a já.",
+      },
+      {
+        src: ploskoviceSkok,
+        type: "video",
+        caption:
+          "Zámek Ploskovice — a jak jinak, středem pozornosti byla Kája. 😄",
+      },
+      {
+        src: nemeckoBoty,
+        caption:
+          "Německo. Perfektní nápad vylézt v dešti na kopec plný bláta, ale nelituju.",
+      },
+      {
+        src: hradStrekov,
+        caption:
+          "Hrad Střekov, Ústí nad Labem. Občasný boj s vosami, ale přežili jsme. 💪",
+      },
     ],
   },
   {
     id: 3,
-    label: "Malé momenty",
+    label: "Hezké momenty",
     photos: [
-      { src: null, caption: "Večery, na které myslím, když chybíš." },
-      { src: null, caption: "Takhle vypadá domov." },
+      {
+        src: prvniMaj,
+        caption: "První máj — stihli jsme ho přesně včas. 💋",
+      },
+      {
+        src: kajaMaturitak,
+        caption: "Po plese. Tuhle fotku mám fakt rád.",
+      },
     ],
   },
   {
     id: 4,
-    label: "Celý rok",
+    label: "Moje nejoblíbenější",
     photos: [
-      { src: null, caption: "365 dní a ani jeden bych neměnil." },
-      { src: null, caption: "Vím, že to teprve začíná." },
+      {
+        src: oblibena,
+        caption:
+          "Tuhle fotku mám nejradši. Když se mi po tobě stýská, stačí se na ní podívat.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    label: "Výročí",
+    photos: [
+      {
+        src: triMesice,
+        type: "video",
+        caption:
+          "Tři měsíce spolu — Vinobranní v Litoměřicích. Hudba, víno, ty.",
+      },
+      {
+        src: pulRoku,
+        caption:
+          "Půl roku. Ty sis dala pořádný steak, já burger. A bylo nám skvěle.",
+      },
+      {
+        src: null,
+        caption: "Jeden rok. A to nejlepší teprve přijde.",
+        placeholder:
+          "Je potřeba zaplnit i tohle místo nějakou hezkou vzpomínkou. 😉",
+      },
     ],
   },
 ];
@@ -262,7 +327,7 @@ function PhotoCard({ photo, onClick }) {
         ) : (
           <div className="anp-photo-placeholder">
             <span>{isVideo ? "🎥" : "📷"}</span>
-            <small>Přidej {isVideo ? "video" : "fotku"}</small>
+            <small>{photo.placeholder ?? (isVideo ? "video" : "fotku")}</small>
           </div>
         )}
       </div>
