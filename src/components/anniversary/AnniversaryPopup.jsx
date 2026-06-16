@@ -114,7 +114,7 @@ export default function AnniversaryPopup() {
 
         <p className="ap-subtitle">
           Mám pro tebe něco připravené —<br />
-          malý výlet přes náš rok.
+          malý výlet našim společným rokem.
         </p>
 
         <button className="ap-cta" onClick={handleDiscover}>

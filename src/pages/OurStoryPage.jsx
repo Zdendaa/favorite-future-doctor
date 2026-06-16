@@ -239,24 +239,18 @@ export default function AnniversaryPage() {
           </svg>
         </div>
 
-        <p className="anp-promise-eyebrow">Promise ring</p>
-        <h2 className="anp-promise-title">
-          Malý slib
-          <br />
-          <em>na celou věčnost</em>
-        </h2>
+        <h2 className="anp-promise-title">Promise ring</h2>
         <p className="anp-promise-text">
-          Tenhle prsten není zásnubní — je to slib, že jsem tady, že to myslím
-          vážně a že chci být součástí tvého příběhu ještě hodně dlouho. Nosíš
-          ho jako připomínku, že tě miluju každý den, nejen ve výročí.
+          Jsem tady pro tebe, nikam nejdu a chci být součástí tvého příběhu
+          ještě moc dlouho. Nos ho jako připomínku, že na tebe myslím. Každý
+          den. Nejen dnes.
         </p>
-        <p className="anp-promise-sign">S láskou, Zdenda 💍</p>
+        <p className="anp-promise-sign">Tvůj Zdenda 💍</p>
       </section>
 
       {/* FOOTER */}
       <footer className="anp-footer">
         <p>Miluju tě, Lásko. 💖</p>
-        <span>20. 6. 2025 – navždy</span>
       </footer>
 
       {/* LIGHTBOX */}
