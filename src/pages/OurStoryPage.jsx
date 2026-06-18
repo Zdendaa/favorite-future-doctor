@@ -216,7 +216,7 @@ export default function AnniversaryPage() {
   };
 
   const closeLightbox = () => {
-    if (lightboxOpenRef.current === false || !lightbox) return;
+    if (lightboxOpenRef.current === false) return;
 
     lightboxOpenRef.current = false;
     setLightbox(null);
@@ -225,7 +225,10 @@ export default function AnniversaryPage() {
   };
   useEffect(() => {
     const handlePopState = () => {
-      if (lightbox) setLightbox(null);
+      if (lightbox) {
+        setLightbox(null);
+        lightboxOpenRef.current = false;
+      }
     };
     globalThis.addEventListener("popstate", handlePopState);
     return () => globalThis.removeEventListener("popstate", handlePopState);
