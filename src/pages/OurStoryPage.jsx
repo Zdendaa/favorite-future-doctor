@@ -367,8 +367,8 @@ export default function AnniversaryPage() {
       </footer>
 
       {/* LIGHTBOX */}
-      <AnimatePresence>
-        {lightbox && (
+      {lightbox && (
+        <AnimatePresence>
           <motion.div
             className="anp-lightbox"
             onClick={(e) => e.target === e.currentTarget && closeLightbox()}
@@ -416,8 +416,8 @@ export default function AnniversaryPage() {
               </motion.p>
             )}
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+      )}
     </main>
   );
 }
