@@ -5,13 +5,24 @@ import prvniRandePetrin from "/videos/prvniRandePetrin.mp4";
 import jezek from "/videos/jezek.mp4";
 import ploskoviceSkok from "/videos/ploskoviceSkok.mp4";
 import triMesice from "/videos/triMesice.mp4";
+import flaje from "/videos/flaje.mp4";
+import autoGolden from "/videos/autoGolden.mp4";
+import prolezaniKaja from "/videos/prolezaniKaja.mp4";
 import firstPhoto from "../assets/photos/firstPhoto.jpg";
 import litomericeLeave from "../assets/photos/litomericeLeave.jpg";
 import cucflek from "../assets/photos/cucflek.jpg";
 import chata from "../assets/photos/chata.jpg";
 import nemeckoBoty from "../assets/photos/nemeckoBoty.jpg";
 import hradStrekov from "../assets/photos/hradStrekov.jpg";
+import teplicMotyl from "../assets/photos/teplicMotyl.jpg";
+import neuhausen from "../assets/photos/neuhausen.jpg";
 import prvniMaj from "../assets/photos/prvniMaj.jpg";
+import vanocePred from "../assets/photos/vanocePred.jpg";
+import tanec from "../assets/photos/tanec.jpg";
+import kartackovaBitva from "../assets/photos/kartackovaBitva.jpg";
+import btsPostavicka from "../assets/photos/btsPostavicka.jpg";
+import prahaPohoda from "../assets/photos/prahaPohoda.jpg";
+import kajaHvezda from "../assets/photos/kajaHvezda.jpg";
 import kajaMaturitak from "../assets/photos/kajaMaturitak.jpg";
 import oblibena from "../assets/photos/oblibena.jpg";
 import pulRoku from "../assets/photos/pulRoku.jpg";
@@ -72,6 +83,26 @@ const CHAPTERS = [
         caption:
           "Hrad Střekov, Ústí nad Labem. Občasný boj s vosami, ale přežili jsme. 💪",
       },
+      {
+        src: teplicMotyl,
+        caption: "Teplice, motýlí pavilon. Tebe si oblíbili víc než mě. 🦋",
+      },
+      {
+        src: neuhausen,
+        caption: "Neuhausen, Německo. My a louskáčci. Přesně tak to má být.",
+      },
+      {
+        src: flaje,
+        type: "video",
+        caption:
+          "Vodní nádrž Fláje. Kája: 'Máme se moc rádi, ale někdy ho seru.' Já: 'Mrzne mi ruka, no comment.' 😂",
+      },
+      {
+        src: autoGolden,
+        type: "video",
+        caption:
+          "Cesta z chaty. V rádiu Golden, ty s telefonem. Tyhle chvíle mám nejradši.",
+      },
     ],
   },
   {
@@ -86,6 +117,35 @@ const CHAPTERS = [
         src: kajaMaturitak,
         caption: "Po plese. Tuhle fotku mám fakt rád.",
       },
+      {
+        src: vanocePred,
+        caption: "Vánoce — Ústí nad Labem a zlatá procházka u Větruše.",
+      },
+      {
+        src: tanec,
+        caption:
+          "Vanesčin maturitní ples. Tančíme a já zapomněl, že tam jsou i ostatní. 💃",
+      },
+      {
+        src: kartackovaBitva,
+        caption: "Ranní kartáčková bitva. Remíza. 😄",
+      },
+      {
+        src: btsPostavicka,
+        caption:
+          "Nejšťastnější člověk na světě — protože v McDonaldu měli BTS hračku. 😅",
+      },
+      {
+        src: prahaPohoda,
+        caption:
+          "Praha, jen my, výhled na Vltavu a do toho agresinvní tráva... 😄",
+      },
+      {
+        src: prolezaniKaja,
+        type: "video",
+        caption:
+          "Kéž bys prolezla takhle lehce i tvojí budoucí vysokou školou.",
+      },
     ],
   },
   {
@@ -96,6 +156,10 @@ const CHAPTERS = [
         src: oblibena,
         caption:
           "Tuhle fotku mám nejradši. Když se mi po tobě stýská, stačí se na ní podívat.",
+      },
+      {
+        src: kajaHvezda,
+        caption: "Kája jako hvězda. 😍",
       },
     ],
   },

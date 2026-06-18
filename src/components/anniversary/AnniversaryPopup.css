@@ -1,4 +1,6 @@
 /* AnniversaryPopup.css */
+/* font imports */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;600&display=swap");
 
 .ap-overlay {
   position: fixed;
@@ -149,6 +151,3 @@
     opacity: 0;
   }
 }
-
-/* font imports */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;600&display=swap");
