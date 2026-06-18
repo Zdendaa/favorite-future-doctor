@@ -162,7 +162,7 @@ const CHAPTERS = [
       },
       {
         src: kajaHvezda,
-        caption: "Kája jako hvězda. 😍",
+        caption: "Nejzářivější hvězda večera. ✨😍",
       },
       {
         src: topFotka,
@@ -179,7 +179,7 @@ const CHAPTERS = [
         src: triMesice,
         type: "video",
         caption:
-          "Tři měsíce spolu — Vinobranní v Litoměřicích. Hudba, víno, ty.",
+          "Tři měsíce spolu — Vinobraní v Litoměřicích. Hudba, víno, ty.",
       },
       {
         src: pulRoku,
