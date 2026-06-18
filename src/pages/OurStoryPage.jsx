@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./OurStoryPage.css";
 
 import prvniRandePetrin from "/videos/prvniRandePetrin.mp4";
@@ -8,6 +8,7 @@ import triMesice from "/videos/triMesice.mp4";
 import flaje from "/videos/flaje.mp4";
 import autoGolden from "/videos/autoGolden.mp4";
 import prolezaniKaja from "/videos/prolezaniKaja.mp4";
+import devetMesicu from "/videos/devetMesicu.mp4";
 import firstPhoto from "../assets/photos/firstPhoto.jpg";
 import litomericeLeave from "../assets/photos/litomericeLeave.jpg";
 import cucflek from "../assets/photos/cucflek.jpg";
@@ -23,6 +24,7 @@ import kartackovaBitva from "../assets/photos/kartackovaBitva.jpg";
 import btsPostavicka from "../assets/photos/btsPostavicka.jpg";
 import prahaPohoda from "../assets/photos/prahaPohoda.jpg";
 import kajaHvezda from "../assets/photos/kajaHvezda.jpg";
+import topFotka from "../assets/photos/topFotka.jpg";
 import kajaMaturitak from "../assets/photos/kajaMaturitak.jpg";
 import oblibena from "../assets/photos/oblibena.jpg";
 import pulRoku from "../assets/photos/pulRoku.jpg";
@@ -65,7 +67,7 @@ const CHAPTERS = [
     photos: [
       {
         src: chata,
-        caption: "Poprvé na chatě. Jen ty a já.",
+        caption: "Poprvé na chatě. Jen ty a já. 💖",
       },
       {
         src: ploskoviceSkok,
@@ -88,8 +90,10 @@ const CHAPTERS = [
         caption: "Teplice, motýlí pavilon. Tebe si oblíbili víc než mě. 🦋",
       },
       {
-        src: neuhausen,
-        caption: "Neuhausen, Německo. My a louskáčci. Přesně tak to má být.",
+        src: autoGolden,
+        type: "video",
+        caption:
+          "Cesta z chaty. V rádiu Golden, ty s telefonem. Tyhle chvíle mám nejradši.",
       },
       {
         src: flaje,
@@ -98,10 +102,8 @@ const CHAPTERS = [
           "Vodní nádrž Fláje. Kája: 'Máme se moc rádi, ale někdy ho seru.' Já: 'Mrzne mi ruka, no comment.' 😂",
       },
       {
-        src: autoGolden,
-        type: "video",
-        caption:
-          "Cesta z chaty. V rádiu Golden, ty s telefonem. Tyhle chvíle mám nejradši.",
+        src: neuhausen,
+        caption: "Neuhausen, Německo. My a louskáčci. Přesně tak to má být.",
       },
     ],
   },
@@ -138,13 +140,13 @@ const CHAPTERS = [
       {
         src: prahaPohoda,
         caption:
-          "Praha, jen my, výhled na Vltavu a do toho agresinvní tráva... 😄",
+          "Praha, jen my, výhled na Vltavu a do toho agresivní tráva... ",
       },
       {
         src: prolezaniKaja,
         type: "video",
         caption:
-          "Kéž bys prolezla takhle lehce i tvojí budoucí vysokou školou.",
+          "Kéž bys prolezla takhle lehce i tvojí budoucí vysokou školou. 🙏",
       },
     ],
   },
@@ -160,6 +162,11 @@ const CHAPTERS = [
       {
         src: kajaHvezda,
         caption: "Kája jako hvězda. 😍",
+      },
+      {
+        src: topFotka,
+        caption:
+          "Moje nejoblíbenější? Samozřejmě i tahle. Au, už teďka mě to bolí, jak mě za to Kája zmlátí. 😂",
       },
     ],
   },
@@ -179,6 +186,11 @@ const CHAPTERS = [
           "Půl roku. Ty sis dala pořádný steak, já burger. A bylo nám skvěle.",
       },
       {
+        src: devetMesicu,
+        type: "video",
+        caption: "Devět měsíců - Praha, Manifesto. Napínavý boj s nudlemi. 🪖",
+      },
+      {
         src: null,
         caption: "Jeden rok. A to nejlepší teprve přijde.",
         placeholder:
@@ -191,7 +203,33 @@ const CHAPTERS = [
 // ─── HLAVNÍ KOMPONENTA ────────────────────────────────────────────────────────
 
 export default function AnniversaryPage() {
-  const [lightbox, setLightbox] = useState(null); // { src, caption }
+  const [lightbox, setLightbox] = useState(null);
+
+  const openLightbox = (photo) => {
+    setLightbox(photo);
+    history.pushState({ lightbox: true }, "");
+  };
+
+  const closeLightbox = () => {
+    setLightbox(null);
+    history.back();
+  };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (lightbox) setLightbox(null);
+    };
+    globalThis.addEventListener("popstate", handlePopState);
+    return () => globalThis.removeEventListener("popstate", handlePopState);
+  }, [lightbox]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && lightbox) closeLightbox();
+    };
+    globalThis.addEventListener("keydown", handleKeyDown);
+    return () => globalThis.removeEventListener("keydown", handleKeyDown);
+  }, [lightbox]);
 
   return (
     <main className="anp-root">
@@ -225,7 +263,7 @@ export default function AnniversaryPage() {
               <PhotoCard
                 key={idx}
                 photo={photo}
-                onClick={() => photo.src && setLightbox(photo)}
+                onClick={() => photo.src && openLightbox(photo)}
               />
             ))}
           </div>
@@ -321,13 +359,13 @@ export default function AnniversaryPage() {
       {lightbox && (
         <div
           className="anp-lightbox"
-          onClick={(e) => e.target === e.currentTarget && setLightbox(null)}
+          onClick={(e) => e.target === e.currentTarget && closeLightbox()}
           role="dialog"
           aria-modal="true"
         >
           <button
             className="anp-lightbox-close"
-            onClick={() => setLightbox(null)}
+            onClick={() => closeLightbox()}
             aria-label="Zavřít"
           >
             ✕
