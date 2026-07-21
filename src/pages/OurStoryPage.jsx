@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./OurStoryPage.css";
 import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import prvniRandePetrin from "/videos/prvniRandePetrin.mp4";
 import jezek from "/videos/jezek.mp4";
@@ -29,6 +30,7 @@ import topFotka from "../assets/photos/topFotka.jpg";
 import kajaMaturitak from "../assets/photos/kajaMaturitak.jpg";
 import oblibena from "../assets/photos/oblibena.jpg";
 import pulRoku from "../assets/photos/pulRoku.jpg";
+import rokSpolu from "../assets/photos/rokSpolu.jpg";
 
 const CHAPTERS = [
   {
@@ -192,10 +194,8 @@ const CHAPTERS = [
         caption: "Devět měsíců - Praha, Manifesto. Napínavý boj s nudlemi. 🪖",
       },
       {
-        src: null,
-        caption: "Jeden rok. A to nejlepší teprve přijde.",
-        placeholder:
-          "Je potřeba zaplnit i tohle místo nějakou hezkou vzpomínkou. 😉",
+        src: rokSpolu,
+        caption: "Jeden rok. A neplánované instagramové zásnuby. 😂",
       },
     ],
   },
@@ -204,6 +204,7 @@ const CHAPTERS = [
 // ─── HLAVNÍ KOMPONENTA ────────────────────────────────────────────────────────
 
 export default function AnniversaryPage() {
+  const navigate = useNavigate();
   const [lightbox, setLightbox] = useState(null);
   const lightboxOpenRef = useRef(false);
 
@@ -244,6 +245,9 @@ export default function AnniversaryPage() {
 
   return (
     <main className="anp-root">
+      <button onClick={() => navigate("/")} className="anp-back-btn">
+        ← Zpět
+      </button>
       {/* HERO */}
       <section className="anp-hero">
         <div className="anp-hero-bg" aria-hidden="true" />
@@ -260,7 +264,6 @@ export default function AnniversaryPage() {
         </p>
         <div className="anp-hero-divider" aria-hidden="true" />
       </section>
-
       {/* KAPITOLY S FOTOGALERIÍ */}
       {CHAPTERS.map((ch) => (
         <section key={ch.id} className="anp-chapter">
@@ -280,7 +283,6 @@ export default function AnniversaryPage() {
           </div>
         </section>
       ))}
-
       {/* PROMISE RING SEKCE */}
       <section className="anp-promise">
         <div className="anp-promise-ring" aria-hidden="true">
@@ -360,12 +362,10 @@ export default function AnniversaryPage() {
         </p>
         <p className="anp-promise-sign">Tvůj Zdenda 💍</p>
       </section>
-
       {/* FOOTER */}
       <footer className="anp-footer">
         <p>Miluju tě, Lásko. 💖</p>
       </footer>
-
       {/* LIGHTBOX */}
       {lightbox && (
         <AnimatePresence>

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./AnniversaryPage.css";
 import AnniversaryPopup from "../components/anniversary/AnniversaryPopup";
+import AnniversaryBanner from "../components/anniversary/AnniversaryBanner";
 
 const RELATIONSHIP_START = new Date(2025, 5, 20);
 
@@ -201,6 +202,7 @@ function App() {
 
   return (
     <main ref={shellRef} className="app-shell">
+      <AnniversaryBanner />
       <AnniversaryPopup />
 
       <div className="burst-layer" aria-hidden="true">
