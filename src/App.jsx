@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AnniversaryPage from "./pages/AnniversaryPage";
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<AnniversaryPage />} />
         <Route path="/anniversary" element={<OurStoryPage />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }

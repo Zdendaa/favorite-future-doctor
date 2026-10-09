@@ -14,6 +14,16 @@
   backdrop-filter: blur(6px);
 }
 
+.study-badge,
+.study-week {
+  display: inline-block;
+  margin: 0.5rem auto;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
 .burst-layer {
   position: absolute;
   inset: 0;

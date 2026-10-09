@@ -4,6 +4,7 @@ import AnniversaryPopup from "../components/anniversary/AnniversaryPopup";
 import AnniversaryBanner from "../components/anniversary/AnniversaryBanner";
 
 const RELATIONSHIP_START = new Date(2025, 5, 20);
+const STUDY_START = new Date(2026, 8, 29); // 29. 9. 2026
 
 function getMonthsTogether(startDate, now = new Date()) {
   let months = (now.getFullYear() - startDate.getFullYear()) * 12;
@@ -29,6 +30,17 @@ function getCzechMonthWord(count) {
   }
 
   return "měsíců";
+}
+
+function getWeeksSince(startDate, now = new Date()) {
+  const diff = now.getTime() - startDate.getTime();
+  return Math.max(1, Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1);
+}
+
+function getCzechWeekWord(count) {
+  if (count === 1) return "týden";
+  if (count >= 2 && count <= 4) return "týdny";
+  return "týdnů";
 }
 
 const sections = [
@@ -92,12 +104,14 @@ const reasons = [
 ];
 
 const motivationSteps = [
-  "Od první třídy máš samý jedničky, to je tvoje super síla.",
-  "Máš plán, disciplínu a silnou hlavu.",
-  "Každej den se posouváš o kus dál.",
-  "Maturitu dáš levou zadní.",
-  "Přijímačky zvládneš stejně jako všechno ostatní.",
-  "Budeš přesně tam, kde chceš být.",
+  "Maturitu máš za sebou. A samozřejmě na jedničku.",
+  "Dostala ses na všechny pražské fakulty. Všechny. To se jen tak někomu nepovede.",
+  "Medicína na 2. LF Karlovy univerzity, přesně tam, kam jsi chtěla.",
+  "Zimní semestr zvládneš, i když to bude náročný.",
+  "Letní semestr taky. Jsi největší borka.",
+  "Celý první ročník zvládneš. A když to bude těžký, nejsi na to sama.",
+  "I když se teď moc nevidíme, myslím na tebe každej den. 💗",
+  "A za 6 let z tebe bude doktorka, na kterou budu strašně pyšný. 👩‍⚕️",
 ];
 
 function App() {
@@ -127,6 +141,9 @@ function App() {
     [],
   );
   const monthWord = getCzechMonthWord(monthsTogether);
+
+  const studyWeek = useMemo(() => getWeeksSince(STUDY_START), []);
+  const weekWord = getCzechWeekWord(studyWeek);
 
   const nextCompliment = () => {
     setComplimentIndex((prev) => (prev + 1) % doctorCompliments.length);
@@ -248,6 +265,10 @@ function App() {
           <span className="infinity-symbol">∞</span>
           <span>{`${monthsTogether} ${monthWord} spolu 💗`}</span>
         </div>
+
+        <p className="study-week">
+          🩺 {studyWeek}. {weekWord} na medicíně
+        </p>
 
         <div className="nickname-card">
           <p className="nickname-title">
@@ -417,11 +438,17 @@ function App() {
 
         {activeSection === "motivace" && (
           <div className="panel slide-up">
-            <h2>Maturitu i přijímačky zvládneš 🎓</h2>
+            <h2>Věřím ti, doktorko 🎓</h2>
             <p className="panel-text">
-              Jseš extrémně chytrá a od první třídy máš samý jedničky. Klikni
-              pro další dávku motivace.
+              Maturita hotová, přijímačky hotový, medicína na 2. LF UK běží.
+              Věřím, že tenhle školní rok dotáhneš úspěšně, zimní i letní
+              semestr, a pak i celých 6 let až do konce. Klikni pro další dávku
+              motivace.
             </p>
+
+            <div className="study-badge">
+              🩺 {studyWeek}. {weekWord} na medicíně
+            </div>
 
             <p className="highlight-line">{motivationSteps[motivationLevel]}</p>
 
